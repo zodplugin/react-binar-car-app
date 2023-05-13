@@ -9,6 +9,10 @@ import { Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './../assets/images/logo.png'
 import Mobil from '../components/Mobil/Mobil';
+import './../index.css'
+import OurServices from '../components/OurServices/OurServices';
+import WhyUs from '../components/WhyUs/WhyUs';
+import OwlCaraousels from '../components/OwlCaraousels/OwlCaraousels';
 
 
 function Home() {
@@ -27,9 +31,9 @@ function Home() {
             >
               <Nav.Link className='mx-3 my-1' href="#action1">Our Services</Nav.Link>
               <Nav.Link className='mx-3 my-1' href="#action2">Why Us</Nav.Link>
-              <Nav.Link className='mx-3 my-1' href="#action2">Testimonial</Nav.Link>
-              <Nav.Link className='mx-3 my-1' href="#action2">FAQ</Nav.Link>
-              <Button className='mx-3 my-1 btn-register' variant="outline-success">Register</Button>
+              <Nav.Link className='mx-3 my-1' href="#action3">Testimonial</Nav.Link>
+              <Nav.Link className='mx-3 my-1' href="#action4">FAQ</Nav.Link>
+              <Button className='mx-3 my-1 btn-register' >Register</Button>
 
             </Nav>
           </Navbar.Collapse>
@@ -37,6 +41,9 @@ function Home() {
         </Navbar>
         <Mobil/>
       </main>
+      <OurServices/>
+      <WhyUs/>
+      <OwlCaraousels/>
       
     </>
   )

@@ -5,13 +5,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import axios from "axios";
+import Data from '../components/Car/Data'
 import { Image } from 'react-bootstrap';
 import Mobil from '../components/Mobil/Mobil';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './../assets/images/logo.png'
 import './../index.css'
 import Search from '../components/Search/Search';
-import Car from '../components/Car/Car'
 
 const BaseURL = "https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json"
 
@@ -19,12 +19,17 @@ const BaseURL = "https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo
 function Cars() {
 
   const [cars, setCars] = useState([])
+  const [filterData, setFilterData] = useState()
 
   useEffect(() => {
     axios.get(BaseURL).then((response) => {
       setCars(response.data)
     })
   },[])
+
+  const filterDataHandler = (data) =>{
+    setFilterData(data)
+  }
   
 
   return (
@@ -52,8 +57,8 @@ function Cars() {
         </Navbar>
         <Mobil/>
       </main>
-      <Search/>
-      <Car data={cars}/>
+      <Search filter={filterDataHandler}/>
+      <Data data={cars} filter={filterData}/>
     </>
   )
 }

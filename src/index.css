@@ -105,6 +105,19 @@ footer {
   margin-top: -50px;
 }
 
+.search .btn-utama {
+  background-color: #5CB85F;
+  color: #ffff;
+  border-radius: 0;
+  border-color: transparent;
+}
+
+.search .btn-utama:hover {
+  color: #5CB85F;
+  background-color: #FFFFFF;
+  border: 1px solid #5CB85F;
+}
+
 .search .search__card {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
@@ -112,7 +125,7 @@ footer {
   border-radius: 8px;
 }
 
-.search .search__card .search__time .form-select {
+.search .search__card .form-select .search__time{
   background-image: url("./assets/images/fi_clock.png");
   background-size: 20px auto;
 }

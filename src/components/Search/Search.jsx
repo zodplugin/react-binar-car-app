@@ -6,14 +6,14 @@ import user from '../../assets/images/fi_users.png'
 
 
 function Search(props) {
-    const [tipeCar, setTipeCar] = useState('')
+    const [tipeDriver, setTipeDriver] = useState('')
     const [tanggal, setTanggal] = useState('')
     const [waktuJemput, setwaktuJemput] = useState('')
     const [jumlahPenumpang, setJumlahPenumpang] = useState('')
 
 
     const tipeChangeHandler = (e) =>{ 
-        setTipeCar(e.target.value)
+        setTipeDriver(e.target.value)
     }
 
     const tanggalChangeHandler = (e) =>{ 
@@ -31,7 +31,7 @@ function Search(props) {
     const sumbitHandler = (e) => {
         e.preventDefault()
         const test = {
-            tipeCar: tipeCar,
+            tipeDriver: tipeDriver,
             tanggal: tanggal,
             waktuJemput: waktuJemput,
             jumlahPenumpang: jumlahPenumpang,
@@ -44,8 +44,8 @@ function Search(props) {
             <Container>
                 <Row>
                     <Col lg={12}>
-                        <Row className='search__card mx-lg-5 py-3 px-4 text-start'>
-                            <Form onSubmit={sumbitHandler}>
+                        <Form onSubmit={sumbitHandler}>
+                            <Row className='search__card mx-lg-5 py-3 px-4 text-start'>
                                 <Col lg={'auto'} xl={2} xxl={3} >
                                     <Form.Label for="cars">Tipe Driver &nbsp; &nbsp; &nbsp; &nbsp; </Form.Label>
                                     <Form.Select id="tipeDriver" aria-label="Default select example" onChange={tipeChangeHandler}>
@@ -86,8 +86,8 @@ function Search(props) {
                                     <Button type='submit' className="btn-utama" style={{ marginTop: '2rem' }} id="load-btn">Cari Mobil</Button>
                                 </Col>
                                 
-                            </Form>
-                        </Row>
+                            </Row>
+                        </Form>
                     </Col>
                 </Row>
             </Container>

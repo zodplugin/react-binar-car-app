@@ -47,20 +47,20 @@ function Search(props) {
                         <Form onSubmit={sumbitHandler}>
                             <Row className='search__card mx-lg-5 py-3 px-4 text-start'>
                                 <Col lg={'auto'} xl={2} xxl={3} >
-                                    <Form.Label for="cars">Tipe Driver &nbsp; &nbsp; &nbsp; &nbsp; </Form.Label>
-                                    <Form.Select id="tipeDriver" aria-label="Default select example" onChange={tipeChangeHandler}>
+                                    <Form.Label htmlFor="cars">Tipe Driver &nbsp; &nbsp; &nbsp; &nbsp; </Form.Label>
+                                    <Form.Select id="tipeDriver" aria-label="Default select example" value={tipeDriver} onChange={tipeChangeHandler}>
                                         <option selected disabled hidden value="Default">Pilih tipe driver</option>
                                         <option value="true">Dengan supir</option>
                                         <option value="false">Tanpa Sopir (Lepas Kunci)</option>
                                     </Form.Select>
                                 </Col>
                                 <Col lg={'auto'}>
-                                    <Form.Label for="tanggal">Tanggal</Form.Label>
+                                    <Form.Label htmlFor="tanggal">Tanggal</Form.Label>
                                     <Form.Control id="tanggal" type="date" className="find__forms" placeholder="Pilih tanggal" onChange={tanggalChangeHandler}/>
                                 </Col>
                                 <Col lg={'auto'}>
-                                    <Form.Label for="waktu-jemput">Pilih Waktu</Form.Label>
-                                    <Form.Select className="search__time" id="waktuJemput" aria-label="Default select example" onChange={waktuChangeHandler}>
+                                    <Form.Label htmlFor="waktu-jemput">Pilih Waktu</Form.Label>
+                                    <Form.Select className="search__time" id="waktuJemput" value={waktuJemput} aria-label="Default select example" onChange={waktuChangeHandler}>
                                         <option selected  disabled hidden value="Default">Pilih Waktu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</option>
                                         <option value="08:00">08.00 WIB</option>
                                         <option value="09:00">09.00 WIB</option>
@@ -70,7 +70,7 @@ function Search(props) {
                                     </Form.Select>
                                 </Col>
                                 <Col lg={'auto'}>
-                                    <Form.Label for="jumlahPenumpang">Jumlah Penumpang (optional)</Form.Label>
+                                    <Form.Label htmlFor="jumlahPenumpang">Jumlah Penumpang (optional)</Form.Label>
                                     <InputGroup className="mb-3">
                                         <Form.Control
                                         id="jumlahPenumpang"

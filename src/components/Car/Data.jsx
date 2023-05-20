@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardImg, Col, Container, Row, Button } from 'react-bootstrap'
+import { Card, CardImg, Col, Container, Row, Button, Image } from 'react-bootstrap'
 import cars from './../../assets/images/cars.png'
 
 function Data(props) {
@@ -39,9 +39,9 @@ function Data(props) {
                         <Row id="cars-container">
                             { 
                                 (props.filter === undefined) || (props.filter.tipeCar === '' && props.filter.tanggal === '' && props.filter.waktuJemput === '' && props.filter.jumlahPenumpang === '') ?
-                                props.data.map((car) => {
+                                props.data.map((car,i) => {
                                         return (
-                                            <Col lg={4}>
+                                            <Col lg={4} key={i}>
                                             <Card className="px-2 py-4">
                                                 <CardImg variant="top" src={car.image}/>
                                                 <Card.Body>
@@ -50,15 +50,39 @@ function Data(props) {
                                                     <Card.Text className="cars__p">
                                                     {car.description} 
                                                     </Card.Text>
+                                                    <Row>
+                                                        <Col xs={1} lg={1} >
+                                                            <Image src='images/fi_users1.png' width="20px"/>
+                                                        </Col>
+                                                        <Col  lg={10} className='ms-lg-2'>
+                                                            {car.capacity}
+                                                        </Col>
+                                                    </Row>
+                                                    <Row className='mt-2'>
+                                                        <Col md lg={1} >
+                                                            <Image src='images/fi_settings.png' width="20px" />
+                                                        </Col>
+                                                        <Col md lg={10} className='ms-lg-2'>
+                                                            {car.transmission}
+                                                        </Col>
+                                                    </Row>
+                                                    <Row className='mt-2 mb-4'>
+                                                        <Col md lg={1} >
+                                                            <Image src='images/fi_calendar.png' width="20px"/>
+                                                        </Col>
+                                                        <Col md lg={10} className='ms-lg-2'>
+                                                             Tahun {car.year}
+                                                        </Col>
+                                                    </Row>
                                                     <Button variant="primary">Go somewhere</Button>
                                                 </Card.Body>
                                             </Card>
                                             </Col>
                                         )
                                     }) :    
-                                    props.data.filter((data)=>dataFilter(data,props.filter)).map((car)=>{
+                                    props.data.filter((data)=>dataFilter(data,props.filter)).map((car,i)=>{
                                         return (
-                                            <Col lg={4}>
+                                            <Col lg={4} key={i}>
                                             <Card className="px-2 py-4">
                                                 <CardImg variant="top" src={car.image}/>
                                                 <Card.Body>
@@ -67,6 +91,30 @@ function Data(props) {
                                                     <Card.Text className="cars__p">
                                                     {car.description} 
                                                     </Card.Text>
+                                                    <Row>
+                                                        <Col xs={1} lg={1} >
+                                                            <Image src='images/fi_users1.png' width="20px"/>
+                                                        </Col>
+                                                        <Col  lg={10} className='ms-lg-2'>
+                                                            {car.capacity}
+                                                        </Col>
+                                                    </Row>
+                                                    <Row className='mt-2'>
+                                                        <Col md lg={1} >
+                                                            <Image src='images/fi_settings.png' width="20px" />
+                                                        </Col>
+                                                        <Col md lg={10} className='ms-lg-2'>
+                                                            {car.transmission}
+                                                        </Col>
+                                                    </Row>
+                                                    <Row className='mt-2 mb-4'>
+                                                        <Col md lg={1} >
+                                                            <Image src='images/fi_calendar.png' width="20px"/>
+                                                        </Col>
+                                                        <Col md lg={10} className='ms-lg-2'>
+                                                             Tahun {car.year}
+                                                        </Col>
+                                                    </Row>
                                                     <Button variant="primary">Go somewhere</Button>
                                                 </Card.Body>
                                             </Card>

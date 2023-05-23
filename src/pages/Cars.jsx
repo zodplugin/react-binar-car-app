@@ -37,7 +37,7 @@ function Cars() {
       <main>
         <Navbar bg="transparent" expand="lg">
         <Container>
-          <Navbar.Brand href="#"><Image src={logo} widtht={'100px'} height={'34px'}/></Navbar.Brand>
+          <Navbar.Brand href="/"><Image src={logo} widtht={'100px'} height={'34px'}/></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

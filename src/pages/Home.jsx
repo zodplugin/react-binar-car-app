@@ -13,6 +13,9 @@ import './../index.css'
 import OurServices from '../components/OurServices/OurServices';
 import WhyUs from '../components/WhyUs/WhyUs';
 import OwlCaraousels from '../components/OwlCaraousels/OwlCaraousels';
+import Footer from '../components/Footer/Footer';
+import Sewa from '../components/Sewa/Sewa';
+import Faq from '../components/Faq/Faq';
 
 
 function Home() {
@@ -21,7 +24,7 @@ function Home() {
       <main>
         <Navbar bg="transparent" expand="lg">
         <Container>
-          <Navbar.Brand href="#"><Image src={logo} widtht={'100px'} height={'34px'}/></Navbar.Brand>
+          <Navbar.Brand href="/"><Image src={logo} widtht={'100px'} height={'34px'}/></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -44,7 +47,9 @@ function Home() {
       <OurServices/>
       <WhyUs/>
       <OwlCaraousels/>
-      
+      <Sewa/>
+      <Faq/>
+      <Footer/>
     </>
   )
 }

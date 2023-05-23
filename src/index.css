@@ -36,6 +36,8 @@ main {
   border: 1px solid #5CB85F;
 }
 
+
+
 .content {
   margin-top: 100px;
 }
@@ -87,6 +89,20 @@ main {
   padding: 0 420px;
   font-size: 14px;
 }
+
+.sewa .container .btn-utama {
+  background-color: #5CB85F;
+  color: #ffff;
+  border-radius: 0;
+  border-color: transparent;
+}
+
+.sewa .container .btn-utama:hover {
+  color: #5CB85F;
+  background-color: #FFFFFF;
+  border: 1px solid #5CB85F;
+}
+
 
 .faq {
   margin-top: 100px;

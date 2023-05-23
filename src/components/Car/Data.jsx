@@ -5,23 +5,24 @@ import cars from './../../assets/images/cars.png'
 function Data(props) {
 
     const dataFilter = (data,filter) => {
+        console.log(filter)
         const tanggalJemputData = new Date(data.availableAt).getTime()
         const tanggal = new Date(`${filter.tanggal} ${filter.waktuJemput}`).getTime()
         const checkWaktu = tanggalJemputData >= tanggal
         const availableAt = (filter.tipeDriver === 'true' && data.available ? true : false)
         const notAvailableAt = (filter.tipeDriver === 'false' && !data.available ? true : false)
-        const penumpang = data.capacity >= filter.jumlahPenumpang
-        if (filter.tanggal !== '' &&  filter.jumlahPenumpang >= 0 && filter.tipeDriver) {
+        const penumpang = parseInt(data.capacity) >= parseInt(filter.jumlahPenumpang)
+        if (filter.tanggal !== '' &&  parseInt(filter.jumlahPenumpang) >= 0 && filter.tipeDriver !== '') {
             return (availableAt || notAvailableAt) && checkWaktu && penumpang
-        } else if (filter.tipeDriver & filter.jumlahPenumpang > 0) {
+        } else if (filter.tipeDriver && parseInt(filter.jumlahPenumpang) >= 0) {
             return (availableAt || notAvailableAt) && penumpang   
-        } else if (filter.tanggal !== ''  && filter.jumlahPenumpang > 0) {
+        } else if (filter.tanggal !== ''  && parseInt(filter.jumlahPenumpang) >= 0) {
             return checkWaktu && penumpang
+        } else if (filter.tipeDriver !== '') {
+            return (availableAt || notAvailableAt)
         } else if (filter.tanggal !== '' ) {
             return checkWaktu
-        } else if (filter.tipeDriver) {
-            return (availableAt || notAvailableAt)
-        } else if (filter.jumlahPenumpang > 0 ){
+        }else if (parseInt(filter.jumlahPenumpang) > 0 ){
             return penumpang
         }else{
             return false
